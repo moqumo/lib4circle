@@ -26,7 +26,11 @@ export default defineConfig({
         presetWebFonts({
             provider: 'google',
             fonts: {
-                zen: 'Zen Maru Gothic',
+                zen: [
+                    {
+                        name: 'Zen Maru Gothic',
+                    },
+                ],
             },
         }),
     ],

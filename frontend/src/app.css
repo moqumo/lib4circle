@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  @apply font-zen;
   margin: 0;
   display: flex;
   place-items: center;
