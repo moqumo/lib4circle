@@ -26,6 +26,8 @@
   <p class="read-the-docs">
     Click on the Vite and Svelte logos to learn more
   </p>
+
+  <div class="test">hello world<div>
 </main>
 
 <style>
@@ -43,5 +45,9 @@
   }
   .read-the-docs {
     color: #888;
+  }
+  .test{
+    @apply text-sm, bg-blue-500;
+    color: red;
   }
 </style>
