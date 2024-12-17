@@ -2,10 +2,17 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+  import Registration from './pages/Registration.svelte';
+
+  let pageType = 'registration';
 </script>
 
 <main>
-  <h1 class="theme">ミニ図書館</h1>
+  {#if pageType === 'registration'}
+    <Registration />
+  {:else}
+    <Counter />
+  {/if}
 </main>
 
 <style>
