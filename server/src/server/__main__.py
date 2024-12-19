@@ -1,7 +1,20 @@
+import os
 import uvicorn  # pyright: ignore
+from detenv import load_dotenv  # pyright: ignore
 from fastapi import FastAPI  # pyright: ignore
+from fastapi.middleware.cors import CORSMiddleware  # pyright: ignore
 
 app = FastAPI()
+load_dotenv(verbose=True)
+
+# CORSミドルウェアを追加
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[str(os.environ.get("FRONTEND_ORIGIN"))],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
