@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     let isbn = '';
     let bookInfo = null;
 
@@ -42,6 +42,23 @@
         }
         console.log(bookInfo);
     }
+
+    function isExists(){
+        fetch(`$import.meta.env.VITE_API_URL/isbn/${isbn}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log(response.json());
+                return response.json();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        });
+    }
 </script>
 
 <p>ISBNを入力してください</p>
@@ -56,6 +73,8 @@
     on:input={handleInput}
 />
 <button type="button" on:click={fetchBookInfo}>検索</button>
+
+<button type="button" on:click={isExists}>確認</button>
 
 {#if bookInfo}
     {#if bookInfo.error}
