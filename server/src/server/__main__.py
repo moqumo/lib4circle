@@ -1,6 +1,6 @@
 import os
 import uvicorn  # pyright: ignore
-from detenv import load_dotenv  # pyright: ignore
+from dotenv import load_dotenv  # pyright: ignore
 from fastapi import FastAPI  # pyright: ignore
 from fastapi.middleware.cors import CORSMiddleware  # pyright: ignore
 
