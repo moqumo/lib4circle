@@ -26,6 +26,8 @@ pydantic==2.10.4
     # via fastapi
 pydantic-core==2.27.2
     # via pydantic
+python-dotenv==1.0.1
+    # via server
 sniffio==1.3.1
     # via anyio
 starlette==0.41.3
