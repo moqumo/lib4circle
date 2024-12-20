@@ -43,7 +43,7 @@
         console.log(bookInfo);
     }
 
-    function isExists(){
+    async function isExists(){
         fetch(`$import.meta.env.VITE_API_URL/isbn/${isbn}`, {
             method: 'GET',
             headers: {
@@ -52,8 +52,9 @@
         })
         .then(response => {
             if (response.ok) {
-                console.log(response.json());
-                return response.json();
+                const data = response.json();
+                console.log(data);
+                return data;
             } else {
                 throw new Error('Network response was not ok');
             }
