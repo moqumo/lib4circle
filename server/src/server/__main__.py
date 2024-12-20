@@ -22,7 +22,7 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/isbn/{isbn}")
+@app.post("/isbn/{isbn}")
 async def read_item(isbn: str):
     print("isbn:", isbn)
     message = "no problem"
