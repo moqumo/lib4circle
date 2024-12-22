@@ -44,8 +44,8 @@
     }
 
     async function isExists(){
-        fetch(`$import.meta.env.VITE_API_URL/isbn/${isbn}`, {
-            method: 'GET',
+        fetch(`${import.meta.env.VITE_API_SERVER_ORIGIN}/isbn/${isbn}`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             }
